@@ -1,0 +1,886 @@
+================================================================================
+IPL COACHING SIMULATOR DASHBOARD - DETAILED ACCESSIBILITY DESCRIPTION
+For Blind Users and Screen Reader Users
+================================================================================
+
+PAGE OVERVIEW
+================================================================================
+
+This is a cricket tactical training platform where fans act as team captains 
+during live IPL (Indian Premier League) matches. Built with Agentic AI, the 
+platform lets users make field positioning and bowling decisions, receive AI 
+feedback, and compete on a leaderboard.
+
+
+PAGE STRUCTURE (TOP TO BOTTOM)
+================================================================================
+
+1. HIDDEN BACKGROUND ELEMENTS
+================================================================================
+
+- A canvas element animates ambient cricket field visuals and particles in 
+  the background (decorative layering, not essential content)
+- Two stadium floodlight effects (left and right sides) animate a flickering 
+  glow effect
+
+
+2. NAVIGATION HEADER (FIXED AT TOP)
+================================================================================
+
+LOGO SECTION (Left):
+- Google Cloud multi-color dot grid icon (4 small colored squares: blue, red, 
+  yellow, green)
+- Site title: "IPL Coaching Simulator" with accent on the word "Coaching"
+- Tagline: "Agentic AI × Real-time fan decision intelligence"
+
+NAVIGATION TABS (Center) - Contains 4 main navigation links:
+1. Watch Live (TV icon) — Links to live stream section
+2. Decisions (Chess icon) — Links to tactical decision form [DEFAULT ACTIVE]
+3. Live Field (Baseball icon) — Links to animated cricket field view
+4. Leaderboard (Trophy icon) — Links to rankings
+
+LIVE BADGE (Right):
+- Red animated pulse dot followed by text "LIVE MATCH"
+- Indicates the match is currently active
+
+
+3. HERO/WELCOME SECTION
+================================================================================
+
+LEFT SIDE (Text Content):
+- Chip badge: "IPL 2026 Tactical Engine" with cricket bat icon
+- Main heading: "Built for Fans. Ready for IPL Scale." 
+  (with gradient styling on "Ready for IPL Scale")
+- Description paragraph: "A high-engagement tactical platform where fans make 
+  captain-level calls, AI scores every move instantly, and live leaderboards 
+  drive retention."
+- Three action buttons:
+  1. "Watch Live Stream" (TV icon) — Navigates to stream section
+  2. "Start Tactical Session" (Play icon) — Navigates to decision form
+  3. "View Growth Signals" (Chart line icon) — Navigates to leaderboard
+
+RIGHT SIDE (Live Data Cards):
+
+SCORECARD CARD:
+- Header: "LIVE SCORECARD" with current over "19.2"
+- Two teams displayed side-by-side:
+  - SRH (Sunrisers Hyderabad): 183 runs / 6 wickets
+  - PBKS (Punjab Kings): 179 runs / 7 wickets
+- Footer: Target is 184, they need 5 runs in 4 remaining balls, high-pressure 
+  phase
+
+THREE KPI (Key Performance Indicator) CARDS:
+- "2.4M+ Fan Decisions" (Users icon)
+- "97% AI Decision Alignment" (Microchip icon)
+- "<1s Response Time" (Lightning bolt icon)
+
+
+4. MAIN CONTENT GRID (DASHBOARD SECTIONS)
+================================================================================
+
+SECTION A: LIVE STREAM EXPERIENCE (WATCH LIVE)
+================================================================================
+
+Purpose: Simulates a Hotstar-style cricket broadcast viewer
+
+VIDEO PLAYER AREA:
+
+Top Overlay Contains:
+- Red "LIVE" badge with pulse effect
+- Live score ticker: "SRH 183/6 • PBKS 179/7 • 19.2 ov"
+
+Main Video Area:
+- Central badge text: "IPL Tactical Broadcast"
+- Decorative layers beneath (crowd effect, pitch, focus ring)
+
+Progress Bar:
+- Full-width interactive timeline showing live stream position
+- Label: "Live stream timeline" (for screen readers)
+- Users can click to seek (though this is live, so seeking limited)
+
+PLAYBACK CONTROLS ROW (Below Video):
+
+Left Side Controls:
+- Play/Pause button (aria-label: "Play or pause stream")
+  Currently shows pause icon (stream is playing)
+- Mute/Unmute button (aria-label: "Mute or unmute stream")
+  Currently shows speaker icon (audio is on)
+- Live time display: "LIVE • 00:00"
+
+Right Side Controls:
+- Quality selector: "1080p" pill button 
+  (aria-label: "Change stream quality")
+- Fullscreen button with expand icon 
+  (aria-label: "Fullscreen")
+
+SIDE PANEL (Right of Player):
+- Heading: "Now Streaming"
+- Match info: "SRH vs PBKS • Death Overs Pressure"
+- Three stat rows with labels and bold values:
+  - Concurrent Viewers: 1.84M
+  - Avg Watch Time: 18m 42s
+  - Decision Participation: 67%
+- Tip text: "Pause the stream to submit tactical decisions ball-by-ball"
+
+
+SECTION B: FAN DECISION CENTER (MAKE YOUR MOVES)
+================================================================================
+
+Purpose: Submit tactical decisions during the match
+
+MATCH BANNER (Context):
+
+Displays both teams and current status:
+- Left team: SRH badge + score 183/6 (20 overs complete)
+- Center: "VS" badge with status "Last Over — Critical Phase"
+- Right team: PBKS badge + score 179/7 (19.2 overs)
+
+DECISION FORM GRID (2 columns on desktop, 1 column on mobile):
+
+1. FIELD PLACEMENT SECTION (Full Width at Top):
+
+Label Row:
+- "Field Placement" label with location-dot icon (blue)
+- Counter badge showing "0 selected"
+- "Clear All" button with X icon to reset all selections
+
+INTERACTIVE CRICKET FIELD DIAGRAM:
+- Oval green field with inner circle (30-yard ring)
+- Central brown pitch with white creases at each end
+- 🏏 Batsman marker at center
+- 14 CLICKABLE POSITION DOTS representing fielding positions:
+  1. Slip - Behind batsman on off side — catches thick edges
+  2. Gully - Square off side — catches slashed or cut shots
+  3. Point - Square off side — restricts cuts and late drives
+  4. Cover - Off side — stops drives through the covers
+  5. Mid-off - Straight off side — restricts straight drives
+  6. Mid-on - Straight leg side — restricts on-drives
+  7. Midwicket - Square leg side — covers pulls & flicks
+  8. Square Leg - Fine leg side — close catching position
+  9. Fine Leg - Behind on leg side — covers glances & sweeps
+  10. Long On - Deep leg-side boundary — saving lofted on-drives
+  11. Long Off - Deep off-side boundary — saving lofted off-drives
+  12. Deep Midwicket - Deep leg side — covers big pulls to boundary
+  13. Deep Cover - Deep off side — saves slashed drives to boundary
+  14. Third Man - Fine off side behind wicket — covers deflections
+
+Each dot has:
+- Tooltip on hover explaining its position and purpose
+- Abbreviation label (SL, GU, PT, etc.)
+- Animated highlight when hovered
+- Color change to green with glow when selected
+- Pop animation effect when clicked to select
+
+Field Legend Below Diagram:
+- Gray dot indicator + "Available"
+- Green dot indicator + "Selected"
+
+POSITION CHIPS GRID:
+- All 14 field positions displayed as rectangular buttons/chips
+- Can be clicked to select/deselect
+- Non-selected: White border, light background, white text
+- Selected positions: Green background with checkmark icon, green text
+- Animated slide-in and scale effect when selected
+- Hover effect: Yellow accent color with lift animation
+
+SELECTED POSITIONS DISPLAY AREA:
+- Real-time list of chosen positions as green tags with map-pin icons
+- Initial state: "No positions selected — click on the field diagram or 
+  chips above" (italicized, muted color)
+- Once positions selected: Shows tags like "📍 Slip", "📍 Deep Cover", etc.
+- Tags fade in with scale animation when added
+- Updates instantly as user clicks field or chips
+
+2. BOWLER CHOICE DROPDOWN (Right Column):
+
+Label: "Bowler Choice" with baseball icon (red)
+
+Dropdown Menu:
+- Placeholder: "— Select Bowler —"
+- Option group label: "SRH Bowlers (Fielding)"
+- 8 bowler options:
+  1. Pat Cummins — Pacer
+  2. Bhuvneshwar Kumar — Swing pacer
+  3. Shaheen Afridi — Left-arm pacer
+  4. Jaydev Unadkat — Left-arm pacer
+  5. Hasan Ali — Pacer
+  6. Mayank Markande — Leg-spin
+  7. Abhishek Sharma — Left-arm spin
+  8. Washington Sundar — Off-spin
+
+Helper Text Below Dropdown:
+- Small italicized text: "SRH vs PBKS — Last over, 5 runs needed"
+
+Styling:
+- Semi-transparent dark background when unfocused
+- Blue border highlight on focus
+- Blue glow effect on focus
+- Custom dropdown arrow (blue chevron)
+- Updated on change event
+
+3. TACTICAL STRATEGY (Full Width Text Area):
+
+Label: "Tactical Strategy" with lightbulb icon (yellow)
+
+Text Area:
+- 4 rows height
+- Large placeholder text with example strategy:
+  "Describe your tactical approach — e.g. defend leg-side boundary with 
+   Deep Midwicket + Fine Leg, use back-of-length wide off stump."
+- Semi-transparent dark background
+- White border on hover/focus with blue glow
+- Character limit: No strict limit, but preview truncates at 55 chars
+
+Updates Real-Time:
+- Live preview updates as user types each character
+
+4. LIVE TACTICS PREVIEW (Full Width, Below Strategy):
+
+Visibility:
+- Hidden when no fields filled
+- Shows only when user has selected field positions, bowler, OR started typing
+
+Display Format:
+- Eye icon in yellow
+- "Live Preview:" bold label
+- Summary text contains:
+  - Bowler name (if selected): "[Bowler Name] bowling"
+  - Field count: "[N] fielder(s) placed ([first 3 positions]...)"
+  - Strategy preview: "strategy: '[first 55 characters]...'"
+  - Parts separated by centered bullet points: " · "
+
+Example Display:
+"👁️ Live Preview: Pat Cummins bowling · 3 fielders placed (Slip, 
+ Deep Cover...) · strategy: 'Pack the off side with two slips...'"
+
+Background: Yellow tint (low opacity)
+Border: Yellow-tinted border
+Text color: Light (readable on yellow background)
+Fade-in animation when shown
+
+5. SUBMIT BUTTON (Full Width):
+
+Normal State:
+- Large gradient button (blue to orange)
+- White text: "Submit Tactical Decision" with paper-plane icon
+- Hover effect: Upward translation, stronger drop shadow
+
+Disabled State:
+- 70% opacity
+- Non-clickable
+- Cursor shows "not-allowed"
+
+Loading State (on click):
+- Button text changes to: "🔄 Evaluating with AI Agents..."
+- Spinner icon animates (rotating)
+- Button disabled
+- Duration: Until server responds
+
+Success State:
+- Button text changes to: "✓ Decision Submitted Successfully"
+- Checkmark icon displays
+- Button disabled
+- Duration: 2.5 seconds, then reverts
+
+Error State:
+- Button text changes to: "⚠️ Submission Failed"
+- Warning/triangle icon displays
+- Button disabled
+- Duration: 2.5 seconds, then reverts
+
+Validation Before Submission:
+- Alert if NO field positions selected: "Please select at least one field 
+  placement position."
+- Alert if NO bowler selected: "Please choose a bowler."
+- Alert if NO strategy text: "Please describe your tactical strategy."
+- Alerts only trigger if user tries to submit with missing fields
+
+6. DECISION OUTPUT BOX:
+
+Initial State:
+- Information icon in blue circle
+- Heading: "Decision Output"
+- Text: "Submit your tactical move to view score, wicket chance, and 
+  run-control impact."
+- Light blue background (#4285F4 with 0.12 alpha)
+- Blue border
+
+After Submission, Box Updates With AI Feedback:
+
+Success Message Card:
+- Green checkmark icon in green circle
+- Heading: "AI Tactical Analysis Complete"
+- Paragraph with AI's written feedback
+- Green background (#34A853 with 0.12 alpha)
+- Green border
+
+Score Breakdown Card:
+- Bar chart icon in blue circle
+- Heading: "Score Breakdown"
+- Four lines of data:
+  * Final Score: [score] / 100
+  * Historical Fit: [percentage]%
+  * Wicket Chance: [percentage]%
+  * Runs Saved: [number]
+- Blue background (#4285F4 with 0.12 alpha)
+- Blue border
+
+Vertex AI Insight Card:
+- Cloud icon in yellow circle
+- Heading: "Vertex AI Confidence"
+- Text: "Model certainty scored via Gemini Pro on Vertex AI."
+- Yellow background (#FBBC05 with 0.1 alpha)
+- Yellow border
+
+Each card has fade-in animation on display
+
+
+SECTION C: LIVE FIELD VIEW (MATCH ANIMATION)
+================================================================================
+
+Purpose: Shows realistic cricket match animation in real-time
+
+CRICKET FIELD OVAL CONTAINER:
+
+Base Field:
+- Green field background with layered grass texture
+- Realistic shading with radial gradients
+- Multiple light/shadow layers for depth
+- Subtle grass pattern (repeating subtle radial gradient)
+- Drop shadow effect beneath oval
+
+Inner Structures:
+
+Dashed Inner Circle:
+- 30-yard ring boundary
+- White dashed line
+- Semi-transparent
+- Positioned at ~18% inset from field edges
+
+Brown Pitch (Center Strip):
+- Central brown/tan rectangular area
+- Gradient shading (darker top, lighter bottom)
+- White border outline
+- Width: 32px, Height: 60% of field height
+- Represents the cricket wicket/pitch
+
+White Creases:
+- Two horizontal white lines
+- One at top (bowler end)
+- One at bottom (batter end)
+- Represent creases where wickets are placed
+
+Wicket/Stumps:
+- Small white horizontal rectangles at each crease
+- Height: 5px, Width: 10px
+- Represent stumps behind batsman and at far end
+
+Animated Elements:
+
+WHITE BALL:
+- Circular shape (11px diameter)
+- Radial gradient shading (lighter top-left, darker bottom-right)
+- White glow shadow effect
+- Moves in realistic path:
+  
+  DELIVERY PHASE (0-45% of cycle):
+  - Ball starts at bowler (center bottom, 49% left, 70% top)
+  - Moves toward batter (center-ish, around 51.8% left, 46.5% top)
+  - Arc upward in middle with easing
+  - Simulates ball pitch-up trajectory
+  - Uses ease-in-out-quad easing function
+  
+  SHOT/FLIGHT PHASE (45-100% of cycle):
+  - Ball travels from pitched position to randomized shot destination
+  - Destinations randomized from 6 possible targets:
+    - Long-on, short cover, mid-wicket, square leg, third man area, etc.
+  - Arc downward (ball falls toward ground after shot)
+  - Uses ease-out-cubic easing function
+  - Cycle repeats every 4.2 seconds with new random destination
+
+BALL TRAIL:
+- Thin white gradient line following ball's path
+- Start fully transparent, middle semi-opaque, end transparent
+- Thickness: 2.5px
+- Angle rotates based on ball velocity direction
+- Opacity and length change based on ball speed:
+  - Faster movement = longer, more opaque trail
+  - Slower movement = shorter, more transparent trail
+- Blur filter for realistic motion effect
+- Smooth transitions (0.08-0.15s)
+
+FIELDER DOTS:
+- 7 yellow/gold fielder positions around the field
+- Each is a 13px diameter sphere
+- Radial gradient fill (brighter top-left)
+- Yellow glow shadow effect
+
+Fielder Positions:
+1. F1 at 16% left, 44% top (square leg area)
+2. F2 at 26% left, 24% top (mid-wicket area)
+3. F3 at 43% left, 14% top (mid-off area)
+4. F4 at 72% right, 20% top (cover area)
+5. F5 at 86% right, 44% top (point/covers area)
+6. F6 at 74% right, 78% bottom (fine leg area)
+7. F7 at 24% left, 80% bottom (long-on area)
+
+Fielder Animation Behavior:
+
+Idle Motion:
+- All fielders bob gently up and down with sine wave
+- Each fielder offset by 0.8 radians so they bob at slightly different times
+- Creates natural "breathing" effect
+
+Reaction to Ball:
+- System calculates which fielder is nearest to ball
+- Nearest fielder enters "reaction mode":
+  - Scales up slightly (1.0 to 1.12× size multiplier)
+  - Moves toward ball direction (up to 8px toward ball)
+  - Opacity increases slightly (0.86 to 1.0)
+  - Effect strength decreases with distance (max 160px reaction radius)
+  
+- Other fielders:
+  - Continue idle motion
+  - Maintain base opacity (0.86)
+  - No reaction movement
+
+All Transitions Smooth:
+- Fielder position updates every frame (60fps)
+- Linear interpolation for position changes
+- Smooth scaling and opacity transitions
+
+Floodlight Sweep Effect:
+- Animated light sweep across field
+- Gradient overlay that moves left to right
+- 6.8 second cycle
+- Simulates stadium floodlight sweep across field
+- Opacity varies (0 → 0.45 → 0.23 → 0 over cycle)
+- Creates dramatic lighting effect
+
+Accessibility:
+- Respects prefers-reduced-motion media query
+- If user has motion preferences set, animations disabled
+
+
+SECTION D: LEADERBOARD (GLOBAL RANKINGS)
+================================================================================
+
+Purpose: Shows top-performing fan coaches and their points
+
+SECTION HEADER:
+- Trophy icon (gold)
+- Main heading: "Leaderboard"
+- Subheading: "Top coaching fans globally"
+
+LEADERBOARD ITEMS:
+
+Each item is a row containing three main parts:
+
+RANK BADGE (Left):
+- 1st place Sridhar: Shows "🥇" (gold medal emoji)
+- 2nd place (if present): Shows "🥈" (silver medal emoji)
+- 3rd place (if present): Shows "🥉" (bronze medal emoji)
+- 4th+ places: Shows "#4", "#5", etc. (number with hash)
+- Badge size: 36px × 36px circle
+- Center-aligned within left column
+
+PLAYER INFO (Center):
+- Username as h4 heading (bold, larger font)
+- Role/subtitle: "Fan Coach" (smaller, muted text)
+- Left-aligned
+- Flex-grow to take available space
+
+SCORE (Right):
+- Large bold number with "pts" label (smaller)
+- Example: "9,850 pts"
+- Numeric formatted with commas for readability
+- Right-aligned
+- Color: White text on transparent background
+
+ROW STYLING BY RANK:
+
+1st Place (Gold Item):
+- Background: Orange/gold gradient
+- Gradient from brighter orange-gold to darker tone
+- Border: Gold-tinted border
+- Row appears highlighted/elevated
+
+2nd Place (Silver Item):
+- Background: Silver/white gradient
+- Gradient from bright silver to muted gray
+- Border: Silver-tinted border
+- Row appears secondary highlight
+
+3rd Place (Bronze Item):
+- Background: Bronze/copper gradient
+- Gradient from brighter bronze to darker tone
+- Border: Bronze-tinted border
+- Row appears tertiary highlight
+
+4th+ Places (Standard Items):
+- Background: Semi-transparent dark
+- Border: Subtle white border
+- Standard appearance
+- Hover effect: Slightly brighter background
+
+All Items:
+- Padding: 18px all sides
+- Border-radius: 12px
+- Border: 1px solid (color varies by rank)
+- Transition on hover: 0.25s ease
+- Hover effect: Lift animation (translateX 4px right)
+
+Initial Load:
+- Leaderboard fetched via API call to `/users/leaderboard/top?limit=10`
+- Shows top 10 entries
+- Default shows sample "Sridhar" entry if API unavailable
+
+
+5. FOOTER
+================================================================================
+
+FOOTER STRUCTURE:
+
+LEFT SECTION:
+- Google Cloud dot logo grid (small 24px version with 4 colored dots)
+- Next to logo: Text "IPL Coaching Simulator"
+- Combined logo + text represents site branding
+
+CENTER SECTION:
+- Attribution text:
+  "Designed & Developed by [Sridhar (clickable name)] 
+   | Agentic AI × Live Fan Engagement × IPL 2026"
+- Designer name linked/highlighted
+- Indicates technology stack and year
+
+RIGHT SECTION:
+- Three badge pills in a row:
+  1. Chart line icon + "Engagement Engine"
+  2. Microchip icon + "AI Tactical Scoring"
+  3. Cricket bat ball icon + "Match-ready Experience"
+- Pills have subtle background and borders
+- Icons colored appropriately (chart=blue, chip=blue, bat=orange)
+
+Footer Background:
+- Dark semi-transparent background
+- Subtle border-top separating from content
+- Full-width container
+- Centered content alignment
+
+
+KEY INTERACTIVE BEHAVIORS
+================================================================================
+
+1. FIELD PLACEMENT INTERACTION:
+- Click any position dot on oval field diagram → Position selects/deselects
+- Click any chip button → Position selects/deselects
+- Clicking again on selected position deselects it
+- Multiple selections allowed simultaneously
+- Selection counter updates with count
+- Selected positions display as green tags in real-time
+- Field position dots highlight green when selected
+- Chips get green background when selected with checkmark visible
+
+2. BOWLER DROPDOWN INTERACTION:
+- Click dropdown to open options
+- Select one bowler from list
+- Selection shows in dropdown button
+- Only one bowler can be selected at a time
+- Dropdown closes after selection
+- Updates live preview with bowler name
+
+3. STRATEGY TEXT INTERACTION:
+- Click text area to focus (cursor appears)
+- Type freely to describe tactical approach
+- Updates in real-time as each character entered
+- Live preview shows first 55 characters of strategy
+- No character limit enforced (though preview truncates)
+- Placeholder disappears on focus
+
+4. LIVE PREVIEW UPDATE:
+- Watches field selections, bowler choice, strategy text
+- Shows/hides based on whether any field filled
+- Updates instantly when user makes any change
+- Formats display with bowler, field count, strategy preview
+
+5. FORM SUBMISSION:
+- Click "Submit Tactical Decision" button
+- JavaScript validates:
+  - At least 1 field position selected? If no: alert message
+  - Bowler selected? If no: alert message
+  - Strategy text entered? If no: alert message
+- If validation passes:
+  - Button shows loading state with spinner
+  - Sends POST request to `/decisions/submit` API
+  - Payload includes: username, field positions, bowler, strategy, ball number
+  - Waits for response
+
+- On Success:
+  - Button shows success message (2.5 seconds)
+  - Decision Output box updates with AI feedback
+  - Leaderboard refreshed with updated stats
+  - User sees feedback containing score, wicket chance, runs saved
+
+- On Error:
+  - Button shows error message (2.5 seconds)
+  - Alert shows error details from server
+  - Decision Output box remains unchanged or shows error
+
+- After 2.5 seconds (success or error):
+  - Button reverts to normal state
+  - Button re-enabled
+  - User can submit another decision
+
+6. NAVIGATION INTERACTION:
+- Click any navigation pill at top
+- Page smoothly scrolls to corresponding section
+- Active pill highlights (visual indicator)
+- As user scrolls page, corresponding nav pill auto-highlights
+- "Watch Live" → scrolls to #stream-experience
+- "Decisions" → scrolls to #decision (default active section)
+- "Live Field" → scrolls to #field-ground
+- "Leaderboard" → scrolls to #leaderboard-section
+
+7. STREAM CONTROL INTERACTIONS:
+
+Play/Pause Button:
+- Click to toggle between playing and paused states
+- When playing: Icon shows pause symbol (⏸)
+- When paused: Icon shows play symbol (▶)
+- Live badge visible in both states
+
+Mute/Unmute Button:
+- Click to toggle audio state
+- When audio on: Icon shows speaker symbol (🔊)
+- When audio off: Icon shows muted speaker (🔇)
+
+Quality Selector:
+- Click "1080p" button to open quality menu
+- Options: 360p, 480p, 720p, 1080p, 4K
+- Selected quality updates button text
+- Simulates streaming quality change
+
+Fullscreen Button:
+- Click expand icon to enter fullscreen
+- Stream player takes entire screen
+- Press ESC or click fullscreen again to exit
+
+Stream Timeline:
+- Click anywhere on progress bar to seek
+- Draggable fill indicator shows current position
+- Visual feedback on interaction
+- Live status remains visible while seeking
+
+8. LIVE GROUND ANIMATION:
+- Ball continuously moves in realistic arcs
+- Every 4.2 seconds: new random shot destination selected
+- Fielders react to ball position
+- Nearest fielder moves toward ball, others idle
+- Animations smooth and continuous
+- Can be disabled via browser's motion preferences
+
+9. PAGE LOADING BEHAVIOR:
+- On page load:
+  - Field positions initialized (14 dots + 14 chips created)
+  - Leaderboard data fetched from API
+  - Live ground animation starts
+  - Nav highlights updated based on scroll position
+
+10. ACCESSIBILITY FEATURES:
+- aria-label attributes on interactive elements for screen readers
+- Proper heading hierarchy (h1, h2, h3, h4)
+- Form labels paired with inputs using <label> elements
+- Color contrast meets WCAG AA standards
+- Keyboard navigation supported for all interactive elements
+- Respects prefers-reduced-motion for users with motion sensitivity
+- Empty state messages for missing data
+- Clear error messages and validation feedback
+- Live regions for dynamic content updates (leaderboard, feedback)
+
+
+COLOR SCHEME REFERENCE
+================================================================================
+
+PRIMARY BLUES:
+- Google Cloud Blue: #4285F4 (used for UI accents, CTAs, borders)
+- Lighter Blue: #5B9CF6 (gradients, hover states)
+
+ACCENT COLORS:
+- IPL Orange: #FF6B00 (brand highlight, headers)
+- IPL Gold: #FFD700 (badges, highlights, achievements)
+- Brighter Orange: #ff8f29 (gradient end)
+
+STATUS COLORS:
+- Red: #EA4335 (errors, live badges, critical alerts)
+- Green: #34A853 (success, selected states, positive actions)
+- Yellow: #FBBC05 (insights, warnings, tips)
+- Darker Orange: #ff6b00 (team colors)
+- Dark Red: #d3182d (team colors, accents)
+
+BACKGROUND & TEXT:
+- Dark Navy Background: #0A0E2A (main page background)
+- Black: #111 (team badges, dark accents)
+- White: #FFFFFF (primary text, general text)
+- Light Gray: #cdd8f0 (form labels, secondary text)
+- Muted Gray: #9AADCC (tertiary text, disabled states)
+- Semi-transparent Dark: rgba(255,255,255,0.06-0.12) (card backgrounds)
+- Semi-transparent Borders: rgba(255,255,255,0.08-0.18) (subtle borders)
+
+TEAM COLORS (Cricket Teams):
+- SRH (Sunrisers Hyderabad): Orange gradient (#ff6b00 → #ff9f45)
+- PBKS (Punjab Kings): Red gradient (#d3182d → #ff4b5f)
+
+GLOW/SHADOW COLORS:
+- Blue Glow: rgba(66,133,244,0.18-0.45)
+- Green Glow: rgba(52,168,83,0.18-0.85)
+- Gold Glow: rgba(255,213,79,0.55-0.95)
+- Yellow Glow: rgba(255,215,0,0.55-0.90)
+
+
+RESPONSIVE DESIGN
+================================================================================
+
+DESKTOP (1024px and above):
+- Navigation pills all visible
+- Hero section: two-column layout (content left, cards right)
+- Form grid: 2 columns (field on left, bowler on right)
+- Stream player and sidebar side-by-side
+- Full-width sections display optimally
+
+TABLET (768px - 1023px):
+- Navigation pills may wrap or compress
+- Hero section responsive (stacking at smaller sizes)
+- Form grid: responsive, may stack to 1 column
+- Stream components may reflow
+
+MOBILE (Below 768px):
+- Navigation collapses or becomes horizontal scrollable
+- Hero content stacks vertically
+- Form inputs stack to full-width single column
+- Cricket field diagram scaled to fit (max 280px width)
+- Stream player stacks above sidebar
+- All buttons remain touch-friendly (min 44px × 44px)
+- Footer badges stack vertically
+
+
+ANIMATION SPECIFICATIONS
+================================================================================
+
+SMOOTH TRANSITIONS:
+- Standard transition: 0.25s ease
+- Fast transition: 0.15s linear (ball/trail updates)
+- Slow transition: 0.35s ease (form submission)
+
+KEYFRAME ANIMATIONS:
+- fieldPop: Position dot pop-in when selected (0.42s)
+- chipSlideIn: Chip selection slide-in (0.36s)
+- tagFadeIn: Tag appearance (0.28s)
+- flicker: Stadium floodlight pulse (5s infinite)
+- livePulse: Live badge pulse (1.2s infinite)
+- floodlightSweep: Field lighting sweep (6.8s infinite)
+
+EASING FUNCTIONS USED:
+- Cubic-bezier(0.34,1.56,0.64,1): Bouncy/overshoot effect
+- Ease-in-out-quad: Smooth ball delivery
+- Ease-out-cubic: Smooth shot trajectory
+- Linear: Constant pace animations
+
+MOTION PREFERENCES:
+- If user sets prefers-reduced-motion: all animations disabled
+- Alternative: static content still visible, no motion
+
+
+PERFORMANCE NOTES
+================================================================================
+
+Canvas Background:
+- Runs requestAnimationFrame at 60fps
+- Draws animated particles and field geometry
+- Low performance impact due to simple shapes
+
+Live Ground Animation:
+- requestAnimationFrame loop for smooth 60fps motion
+- Calculates ball position, trail, and fielder reactions each frame
+- ~40 calculations per frame but minimal DOM updates
+- Optimized for modern browsers
+
+Field Position Initialization:
+- Creates 14 DOM elements on page load
+- Minimal initial load time
+- Event listeners attached to each element
+- CSS classes toggle rather than inline style updates (faster)
+
+Leaderboard Updates:
+- DOM innerHTML replaced on update
+- 10 items maximum
+- Uses classList.toggle for styling (efficient)
+
+
+ACCESSIBILITY COMPLIANCE
+================================================================================
+
+Screen Reader Compatibility:
+- All interactive elements have aria-label or aria-labelledby
+- Headings properly structured
+- Form fields labeled with <label> elements
+- Form validation messages announced
+- Live regions for dynamic content updates
+
+Keyboard Navigation:
+- All buttons and form inputs keyboard accessible
+- Tab order logical (left to right, top to bottom)
+- Enter/Space to activate buttons
+- Enter to submit form
+- Escape to close modals/dropdowns
+
+Color Contrast:
+- Text contrast ratio meets WCAG AA (4.5:1 minimum)
+- Status indicators don't rely solely on color
+- Additional visual indicators (icons, text) provided
+
+Motion and Animation:
+- prefers-reduced-motion respected
+- Animations non-essential (content visible without motion)
+- No auto-playing videos or audio
+- Users can pause animations if needed
+
+Alternative Text:
+- Icons accompanied by text labels or aria-labels
+- Images have alt text (though mostly decorative)
+- Non-decorative graphics descriptive
+
+Mobile Accessibility:
+- Touch targets minimum 44px × 44px
+- Readable text size (minimum 12px, typically 14px+)
+- Forms accessible on small screens
+- Zoom/magnification supported
+
+
+SUMMARY
+================================================================================
+
+The IPL Coaching Simulator Dashboard is a comprehensive cricket fan engagement 
+platform combining live streaming experience with tactical gameplay mechanics. 
+
+Key sections include:
+1. Live stream player with professional broadcast controls
+2. Interactive tactical decision system with visual field editor
+3. Real-time animated cricket match display
+4. Competitive leaderboard system
+5. AI-powered feedback and scoring
+
+The interface prioritizes accessibility with comprehensive screen reader 
+support, keyboard navigation, and visual hierarchy that works for all users 
+including those with visual impairments. Professional design with attention 
+to layout, spacing, color, and animation creates an engaging experience 
+comparable to commercial streaming platforms while maintaining usability for 
+all audiences.
+
+Design is responsive across all device sizes and respects user preferences 
+for motion and reduced animation. Dark theme optimizes for viewing during 
+nighttime cricket sessions, while maintaining sufficient contrast for 
+readability.
+
+================================================================================
+END OF ACCESSIBILITY GUIDE
+================================================================================

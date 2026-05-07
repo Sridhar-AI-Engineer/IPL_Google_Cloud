@@ -1,0 +1,24 @@
+{
+  "samples": 4,
+  "rmse": 0.061710169016134984,
+  "r2": 0.8289780859567994,
+  "model_type": "RandomForestRegressor",
+  "features": [
+    "ball_number",
+    "phase",
+    "field_placement",
+    "bowling_change",
+    "tactical_strategy",
+    "field_count",
+    "strategy_length",
+    "avg_catch_probability",
+    "avg_eff_vs_pace",
+    "avg_run_prevention",
+    "bowler_economy",
+    "bowler_wickets_per_match",
+    "bowler_yorker_accuracy",
+    "bowler_dot_ball_percentage",
+    "phase_economy",
+    "phase_wickets"
+  ]
+}

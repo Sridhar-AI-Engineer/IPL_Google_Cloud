@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IPL Coaching Simulator | Investment-Ready Fan Intelligence Platform</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="stadium-floodlight left"></div>
+    <div class="stadium-floodlight right"></div>
+
+    <header class="navbar">
+        <div class="logo-section">
+            <div class="gcloud-logo">
+                <span class="dot g-blue"></span>
+                <span class="dot g-red"></span>
+                <span class="dot g-yellow"></span>
+                <span class="dot g-green"></span>
+            </div>
+            <div class="logo-text">
+                <h1>IPL<span class="accent"> Coaching</span> Simulator</h1>
+                <p class="tagline">Agentic AI × Real-time fan decision intelligence</p>
+            </div>
+        </div>
+
+        <nav class="nav-pills">
+            <a class="nav-pill active" href="#decision"><i class="fa-solid fa-chess"></i> Decisions</a>
+            <a class="nav-pill" href="#field-ground"><i class="fa-solid fa-baseball"></i> Live Field</a>
+            <a class="nav-pill" href="#leaderboard-section"><i class="fa-solid fa-trophy"></i> Leaderboard</a>
+            <a class="nav-pill" href="#history-section"><i class="fa-solid fa-clock-rotate-left"></i> History</a>
+        </nav>
+
+        <div class="nav-right">
+            <div class="live-badge">
+                <span class="pulse-dot"></span>
+                LIVE MATCH
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="ipl-chip">
+                <i class="fa-solid fa-cricket-bat-ball"></i>&nbsp; IPL 2026 Tactical Engine
+            </div>
+            <h2>Built for Fans.<br /><span class="gradient-text">Ready for IPL Scale.</span></h2>
+            <p>
+                A high-engagement tactical platform where fans make captain-level calls,
+                AI scores every move instantly, and live leaderboards drive retention.
+            </p>
+
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="document.getElementById('decision').scrollIntoView({behavior:'smooth'})">
+                    <i class="fa-solid fa-play"></i>
+                    Start Tactical Session
+                </button>
+                <button class="btn-gcloud" onclick="document.getElementById('leaderboard-section').scrollIntoView({behavior:'smooth'})">
+                    <i class="fa-solid fa-chart-line"></i>
+                    View Growth Signals
+                </button>
+            </div>
+        </div>
+
+        <div class="hero-right">
+            <div class="scoreboard-card glass">
+                <div class="sb-header">
+                    <span class="sb-label">LIVE SCORECARD</span>
+                    <span class="sb-over">Over 19.2</span>
+                </div>
+                <div class="sb-teams">
+                    <div class="sb-team">
+                        <div class="team-badge srh">SRH</div>
+                        <div class="sb-score">183<span>/6</span></div>
+                    </div>
+                    <div class="sb-separator">vs</div>
+                    <div class="sb-team">
+                        <div class="team-badge pbks">PBKS</div>
+                        <div class="sb-score">179<span>/7</span></div>
+                    </div>
+                </div>
+                <div class="sb-footer">Target: 184 • Need 5 in 4 balls • High-pressure phase</div>
+            </div>
+
+            <div class="kpi-row">
+                <div class="kpi-card glass">
+                    <i class="fa-solid fa-users"></i>
+                    <h3>2.4M+</h3>
+                    <p>Fan Decisions</p>
+                </div>
+                <div class="kpi-card glass">
+                    <i class="fa-solid fa-microchip"></i>
+                    <h3>97%</h3>
+                    <p>AI Decision Alignment</p>
+                </div>
+                <div class="kpi-card glass">
+                    <i class="fa-solid fa-bolt"></i>
+                    <h3>&lt;1s</h3>
+                    <p>Response Time</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="dashboard-grid">
+
+        <section id="decision" class="card glass big-card">
+            <div class="section-title">
+                <div class="title-icon ipl-orange"><i class="fa-solid fa-chess"></i></div>
+                <div>
+                    <h2>Fan Decision Center</h2>
+                    <small>Submit your tactical call in real-time with AI evaluation</small>
+                </div>
+            </div>
+
+            <div class="match-banner">
+                <div class="match-team">
+                    <div class="team-logo srh-logo">SRH</div>
+                    <div class="match-score">183<span class="wickets">/6</span></div>
+                    <div class="match-overs">(20 ov)</div>
+                </div>
+                <div class="match-center">
+                    <div class="vs-badge">VS</div>
+                    <div class="match-status">Last Over — Critical Phase</div>
+                </div>
+                <div class="match-team">
+                    <div class="team-logo pbks-logo">PBKS</div>
+                    <div class="match-score">179<span class="wickets">/7</span></div>
+                    <div class="match-overs">(19.2 ov)</div>
+                </div>
+            </div>
+
+            <div class="form-grid">
+                <div class="input-group">
+                    <label><i class="fa-solid fa-user" style="color:#34A853"></i>&nbsp; Username</label>
+                    <input id="username_input" type="text" maxlength="30" placeholder="Enter your username" />
+                    <small class="input-hint">Your decisions and history are tracked under this username.</small>
+                </div>
+
+                <div class="input-group full-width">
+                    <div class="field-selector-wrapper">
+                        <div class="field-label-row">
+                            <label>
+                                <i class="fa-solid fa-location-dot" style="color:#4285F4"></i>&nbsp;
+                                Field Placement
+                                <span class="field-count-badge" id="field-count">0 selected</span>
+                            </label>
+                            <button class="clear-field-btn" onclick="clearFieldSelections()">
+                                <i class="fa-solid fa-xmark"></i> Clear All
+                            </button>
+                        </div>
+
+                        <div class="cricket-field-container">
+                            <div class="cricket-field-oval" id="cricket-field-oval">
+                                <div class="field-inner-circle"></div>
+                                <div class="pitch-rect"></div>
+                                <div class="stumps top-s"></div>
+                                <div class="stumps bottom-s"></div>
+                                <div class="batsman-marker" title="Batsman position">🏏</div>
+                            </div>
+                            <div class="field-legend">
+                                <span><span class="legend-dot inactive-l"></span> Available</span>
+                                <span><span class="legend-dot active-l"></span> Selected</span>
+                            </div>
+                        </div>
+
+                        <div class="position-chips" id="position-chips"></div>
+
+                        <div class="selected-positions-display" id="selected-display">
+                            <span style="color:var(--text-muted);font-style:italic">
+                                No positions selected — click on the field diagram or chips above
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label><i class="fa-solid fa-baseball" style="color:#EA4335"></i>&nbsp; Bowler Choice</label>
+                    <select id="bowler_input" class="bowler-select" onchange="updateTacticsSummary()">
+                        <option value="">— Select Bowler —</option>
+                        <optgroup label="SRH Bowlers (Fielding)">
+                            <option value="Pat Cummins">Pat Cummins — Pacer</option>
+                            <option value="Bhuvneshwar Kumar">Bhuvneshwar Kumar — Swing pacer</option>
+                            <option value="Shaheen Afridi">Shaheen Afridi — Left-arm pacer</option>
+                            <option value="Jaydev Unadkat">Jaydev Unadkat — Left-arm pacer</option>
+                            <option value="Hasan Ali">Hasan Ali — Pacer</option>
+                            <option value="Mayank Markande">Mayank Markande — Leg-spin</option>
+                            <option value="Abhishek Sharma">Abhishek Sharma — Left-arm spin</option>
+                            <option value="Washington Sundar">Washington Sundar — Off-spin</option>
+                        </optgroup>
+                    </select>
+                    <small class="input-hint">SRH vs PBKS — Last over, 5 runs needed</small>
+                </div>
+
+                <div class="input-group full-width">
+                    <label><i class="fa-solid fa-lightbulb" style="color:#FBBC05"></i>&nbsp; Tactical Strategy</label>
+                    <textarea id="strategy_input" rows="4"
+                        placeholder="Describe your tactical approach — e.g. defend leg-side boundary with Deep Midwicket + Fine Leg, use back-of-length wide off stump."
+                        oninput="updateTacticsSummary()"></textarea>
+                </div>
+
+                <div class="tactics-summary full-width" id="tactics-summary"></div>
+            </div>
+
+            <button class="submit-btn" onclick="submitDecision()">
+                <i class="fa-solid fa-paper-plane"></i>
+                Submit Tactical Decision
+            </button>
+
+            <div id="decision-result" class="decision-result">
+                <div class="feedback-item info">
+                    <div class="fi-icon"><i class="fa-solid fa-circle-info"></i></div>
+                    <div>
+                        <h3>Decision Output</h3>
+                        <p>Submit your tactical move to view score, wicket chance, and run-control impact.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="field-ground" class="card glass field-card">
+            <div class="section-title">
+                <div class="title-icon ipl-orange"><i class="fa-solid fa-baseball"></i></div>
+                <div>
+                    <h2>Live Field View</h2>
+                    <small>Animated ground layout for SRH vs PBKS</small>
+                </div>
+            </div>
+
+            <div class="ground-wrapper">
+                <div class="ground-oval">
+                    <div class="inner-ring"></div>
+                    <div class="pitch-strip"></div>
+                    <div class="crease top"></div>
+                    <div class="crease bottom"></div>
+                    <div class="fielder f1"></div>
+                    <div class="fielder f2"></div>
+                    <div class="fielder f3"></div>
+                    <div class="fielder f4"></div>
+                    <div class="fielder f5"></div>
+                    <div class="fielder f6"></div>
+                    <div class="fielder f7"></div>
+                    <div class="ball-trail"></div>
+                    <div class="live-ball"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="leaderboard-section" class="card glass">
+            <div class="section-title">
+                <div class="title-icon ipl-gold"><i class="fa-solid fa-trophy"></i></div>
+                <div>
+                    <h2>Leaderboard</h2>
+                    <small>Top coaching fans globally</small>
+                </div>
+            </div>
+
+            <div id="leaderboard" class="leaderboard">
+                <div class="leaderboard-item gold">
+                    <div class="rank-badge">🥇</div>
+                    <div class="lb-info">
+                        <h4>Sridhar</h4>
+                        <p>Fan Coach</p>
+                    </div>
+                    <div class="lb-score">9,850 <span>pts</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="history-section" class="card glass history-card">
+            <div class="section-title">
+                <div class="title-icon ipl-orange"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                <div>
+                    <h2>Your Tactical History</h2>
+                    <small>Stored from database — latest decisions, score and feedback</small>
+                </div>
+            </div>
+
+            <div id="history-list" class="history-list">
+                <p class="history-empty">No tactical decisions yet. Submit one to see history here.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="gcloud-logo small">
+                    <span class="dot g-blue"></span>
+                    <span class="dot g-red"></span>
+                    <span class="dot g-yellow"></span>
+                    <span class="dot g-green"></span>
+                </div>
+                <span>IPL Coaching Simulator</span>
+            </div>
+            <p>
+                Designed &amp; Developed by <span class="footer-name">Sridhar</span>
+                &nbsp;|&nbsp; Agentic AI × Live Fan Engagement × IPL 2026
+            </p>
+            <div class="footer-badges">
+                <span><i class="fa-solid fa-chart-line"></i> Engagement Engine</span>
+                <span><i class="fa-solid fa-microchip"></i> AI Tactical Scoring</span>
+                <span><i class="fa-solid fa-cricket-bat-ball"></i> Match-ready Experience</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
