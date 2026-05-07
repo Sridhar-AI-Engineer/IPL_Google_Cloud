@@ -63,6 +63,10 @@ class Settings(BaseSettings):
     tactical_pipeline_mode: Literal["auto", "langchain", "langgraph", "local"] = "auto"  # type: ignore
     langchain_llm_model: str = "gemini-2.0-flash"
 
+    # ==================== CLOUD DEPLOYMENT ====================
+    project_id: str | None = None
+    gemini_model: str = "gemini-2.0-flash"
+
     # ==================== API ====================
     api_version: str = "v1"
     cors_origins: list[str] = ["http://localhost:3000", "http://localhost:8000"]
