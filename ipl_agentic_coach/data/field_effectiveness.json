@@ -1,0 +1,114 @@
+{
+  "Slip": {
+    "catch_probability": 0.18,
+    "effectiveness_vs_pace": 0.85,
+    "effectiveness_vs_spin": 0.45,
+    "best_for": ["edges", "thick-edges"],
+    "placement_depth": "close",
+    "run_prevention": 2.4
+  },
+  "Gully": {
+    "catch_probability": 0.16,
+    "effectiveness_vs_pace": 0.78,
+    "effectiveness_vs_spin": 0.52,
+    "best_for": ["cuts", "slashed-drives"],
+    "placement_depth": "close",
+    "run_prevention": 2.1
+  },
+  "Point": {
+    "catch_probability": 0.14,
+    "effectiveness_vs_pace": 0.72,
+    "effectiveness_vs_spin": 0.68,
+    "best_for": ["cuts", "drives"],
+    "placement_depth": "close",
+    "run_prevention": 1.8
+  },
+  "Cover": {
+    "catch_probability": 0.12,
+    "effectiveness_vs_pace": 0.75,
+    "effectiveness_vs_spin": 0.70,
+    "best_for": ["drives", "cover-shots"],
+    "placement_depth": "close",
+    "run_prevention": 2.0
+  },
+  "Mid-Off": {
+    "catch_probability": 0.10,
+    "effectiveness_vs_pace": 0.68,
+    "effectiveness_vs_spin": 0.75,
+    "best_for": ["straight-drives"],
+    "placement_depth": "close",
+    "run_prevention": 1.6
+  },
+  "Mid-On": {
+    "catch_probability": 0.11,
+    "effectiveness_vs_pace": 0.65,
+    "effectiveness_vs_spin": 0.72,
+    "best_for": ["on-drives", "flicks"],
+    "placement_depth": "close",
+    "run_prevention": 1.5
+  },
+  "Midwicket": {
+    "catch_probability": 0.15,
+    "effectiveness_vs_pace": 0.70,
+    "effectiveness_vs_spin": 0.68,
+    "best_for": ["pulls", "flicks"],
+    "placement_depth": "close",
+    "run_prevention": 1.9
+  },
+  "Square Leg": {
+    "catch_probability": 0.13,
+    "effectiveness_vs_pace": 0.68,
+    "effectiveness_vs_spin": 0.65,
+    "best_for": ["pulls", "leg-side shots"],
+    "placement_depth": "close",
+    "run_prevention": 1.7
+  },
+  "Fine Leg": {
+    "catch_probability": 0.09,
+    "effectiveness_vs_pace": 0.55,
+    "effectiveness_vs_spin": 0.48,
+    "best_for": ["glances", "fine-shots"],
+    "placement_depth": "fine",
+    "run_prevention": 1.2
+  },
+  "Long On": {
+    "catch_probability": 0.08,
+    "effectiveness_vs_pace": 0.62,
+    "effectiveness_vs_spin": 0.58,
+    "best_for": ["lofted-shots"],
+    "placement_depth": "deep",
+    "run_prevention": 3.2
+  },
+  "Long Off": {
+    "catch_probability": 0.08,
+    "effectiveness_vs_pace": 0.65,
+    "effectiveness_vs_spin": 0.60,
+    "best_for": ["lofted-shots"],
+    "placement_depth": "deep",
+    "run_prevention": 3.4
+  },
+  "Deep Midwicket": {
+    "catch_probability": 0.10,
+    "effectiveness_vs_pace": 0.72,
+    "effectiveness_vs_spin": 0.68,
+    "best_for": ["pull-boundary", "big-hits"],
+    "placement_depth": "deep",
+    "run_prevention": 2.8
+  },
+  "Deep Cover": {
+    "catch_probability": 0.09,
+    "effectiveness_vs_pace": 0.70,
+    "effectiveness_vs_spin": 0.65,
+    "best_for": ["drive-boundary"],
+    "placement_depth": "deep",
+    "run_prevention": 2.9
+  },
+  "Third Man": {
+    "catch_probability": 0.11,
+    "effectiveness_vs_pace": 0.78,
+    "effectiveness_vs_spin": 0.35,
+    "best_for": ["edges", "fine-shots"],
+    "placement_depth": "fine",
+    "run_prevention": 1.4
+  }
+}

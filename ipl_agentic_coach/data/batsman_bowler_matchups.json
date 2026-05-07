@@ -1,0 +1,47 @@
+{
+  "Virat_Kohli_vs_Pat_Cummins": {
+    "matches": 8,
+    "average": 32.5,
+    "strike_rate": 128.4,
+    "vs_yorker": 0.35,
+    "vs_short_pitch": 0.72,
+    "dismissal_type": "caught",
+    "recommendation": "Use yorker at blockhole"
+  },
+  "Virat_Kohli_vs_Bhuvneshwar_Kumar": {
+    "matches": 12,
+    "average": 28.3,
+    "strike_rate": 125.1,
+    "vs_swing": 0.42,
+    "vs_seam": 0.48,
+    "dismissal_type": "bowled",
+    "recommendation": "Use consistent seam movement"
+  },
+  "Rohit_Sharma_vs_Pat_Cummins": {
+    "matches": 6,
+    "average": 42.1,
+    "strike_rate": 145.2,
+    "vs_yorker": 0.55,
+    "vs_short_pitch": 0.68,
+    "dismissal_type": "lbw",
+    "recommendation": "Short pitched or yorker"
+  },
+  "Rishabh_Pant_vs_Pat_Cummins": {
+    "matches": 5,
+    "average": 38.6,
+    "strike_rate": 165.3,
+    "vs_yorker": 0.42,
+    "vs_slower_ball": 0.58,
+    "dismissal_type": "caught",
+    "recommendation": "Slower ball variations"
+  },
+  "Suryakumar_Yadav_vs_Shaheen_Afridi": {
+    "matches": 4,
+    "average": 35.2,
+    "strike_rate": 138.1,
+    "vs_yorker": 0.48,
+    "vs_pace": 0.65,
+    "dismissal_type": "caught",
+    "recommendation": "Yorker with pace"
+  }
+}

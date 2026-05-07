@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IPL Coaching Simulator | Fan Intelligence Platform</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        .launch {
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 24px;
+            position: relative;
+            z-index: 2;
+        }
+        .launch-card {
+            width: min(760px, 96%);
+            padding: 40px;
+            border-radius: 24px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.14);
+            backdrop-filter: blur(14px);
+            text-align: center;
+        }
+        .launch-card h1 { font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.1; margin-bottom: 14px; }
+        .launch-card p { color: var(--text-muted); font-size: 1rem; margin-bottom: 26px; }
+        .launch-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            background: linear-gradient(135deg, var(--ipl-orange), #ff8f29);
+            color: #fff;
+            padding: 12px 26px;
+            border-radius: 999px;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="stadium-floodlight left"></div>
+    <div class="stadium-floodlight right"></div>
+
+    <section class="launch">
+        <div class="launch-card">
+            <div class="ipl-chip" style="margin:0 auto 18px;">
+                <i class="fa-solid fa-cricket-bat-ball"></i>&nbsp; IPL 2026 AI Experience
+            </div>
+            <h1>Fan Decisions.<br><span class="gradient-text">League-Scale Engagement.</span></h1>
+            <p>
+                Real-time tactical gameplay, AI-powered scoring, and leaderboard loops designed
+                for premium IPL fan interaction.
+            </p>
+            <a class="launch-btn" href="/dashboard">Open Live Dashboard</a>
+        </div>
+    </section>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+flowchart LR
+    %% =========================
+    %% IPL Coaching Simulator
+    %% =========================
+
+    %% Frontend
+    subgraph FE["1. Frontend (User Interface)"]
+        UI1["Fan Dashboard<br/>• Live Match State<br/>• Tactical Decision Input"]
+        UI2["Leaderboard<br/>• Rankings<br/>• Scores"]
+        UI3["AI Feedback Panel<br/>• Tactical Suggestions<br/>• What Worked / Didn’t"]
+    end
+
+    %% Backend
+    subgraph BE["2. Backend (FastAPI)"]
+        API["API Layer<br/>/submit-decision<br/>/get-feedback<br/>/leaderboard"]
+        DM["Decision Manager<br/>• Validate Input<br/>• Manage Match State"]
+        SM["Score Manager<br/>• Store Scores<br/>• Update Leaderboard"]
+        AUTH["Auth & User Manager"]
+    end
+
+    %% Database
+    subgraph DB["3. Database (SQLite)"]
+        USERS["Users Table"]
+        HIST["Historical IPL Data<br/>• Ball-by-ball<br/>• Captain Decisions"]
+        DEC["Fan Decisions & Scores"]
+    end
+
+    %% Agentic AI Pipeline
+    subgraph AI["4. Agentic AI Pipeline (LangChain + LangGraph)"]
+
+        FDA["FanDecisionAgent<br/>Converts fan input into structured tactical moves"]
+
+        HEA["HistoricalEvaluatorAgent<br/>Compares moves with historical IPL matches & captain decisions"]
+
+        SIM["SimulatorAgent<br/>Predicts outcome of next 1–3 balls"]
+
+        SA["ScoringAgent<br/>Computes score & generates AI feedback"]
+    end
+
+    %% Optional GCP Deployment
+    subgraph GCP["5. Optional GCP Cloud Deployment"]
+        STORAGE["Cloud Storage / Static Hosting<br/>Frontend Deployment"]
+        CR["Cloud Run<br/>FastAPI Backend"]
+        CLOUDSQL["Cloud SQL / Managed DB"]
+        LOGS["Cloud Logging & Monitoring"]
+    end
+
+    %% =========================
+    %% Data Flow
+    %% =========================
+
+    UI1 -->|"Fan Decision Input"| API
+    API --> DM
+    DM --> FDA
+    FDA --> HEA
+    HEA --> SIM
+    SIM --> SA
+
+    %% Historical DB Access
+    HIST -->|"Historical Match Data"| HEA
+
+    %% Scores & Feedback
+    SA -->|"AI Feedback + Score"| SM
+    SM --> DEC
+
+    %% Return to Frontend
+    SM -->|"Leaderboard Updates"| UI2
+    SA -->|"Dynamic AI Feedback"| UI3
+
+    %% User/Auth
+    AUTH --> USERS
+
+    %% Backend to DB
+    API --> DEC
+    API --> USERS
+
+    %% Deployment Flow
+    STORAGE -.-> UI1
+    CR -.-> API
+    CLOUDSQL -.-> DB
+    CR -.-> CLOUDSQL
+    CR -.-> LOGS
+
+    %% Styling
+    classDef frontend fill:#E3F2FD,stroke:#1E88E5,color:#000,stroke-width:2px;
+    classDef backend fill:#E8F5E9,stroke:#43A047,color:#000,stroke-width:2px;
+    classDef database fill:#FFF3E0,stroke:#FB8C00,color:#000,stroke-width:2px;
+    classDef ai fill:#F3E5F5,stroke:#8E24AA,color:#000,stroke-width:2px;
+    classDef cloud fill:#ECEFF1,stroke:#546E7A,color:#000,stroke-width:2px;
+
+    class UI1,UI2,UI3 frontend;
+    class API,DM,SM,AUTH backend;
+    class USERS,HIST,DEC database;
+    class FDA,HEA,SIM,SA ai;
+    class STORAGE,CR,CLOUDSQL,LOGS cloud;
